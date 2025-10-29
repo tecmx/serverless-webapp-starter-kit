@@ -1,0 +1,48 @@
+# docker-compose.override.yml.example
+# Copie este arquivo para docker-compose.override.yml para personalizar sua configuração
+# O arquivo docker-compose.override.yml é automaticamente usado pelo docker-compose
+# e é ignorado pelo git
+
+version: '3.8'
+
+services:
+  localstack:
+    environment:
+      # Habilita debug para mais informações nos logs
+      - DEBUG=1
+
+      # Configura porta fixa para serviços externos (útil para desenvolvimento)
+      - EDGE_PORT=4566
+
+      # Habilita recursos Pro do LocalStack (requer licença)
+      # - LOCALSTACK_API_KEY=your-api-key-here
+
+      # Configurações adicionais de Lambda
+      - LAMBDA_DOCKER_NETWORK=localstack-network
+      - LAMBDA_REMOVE_CONTAINERS=true
+
+      # Timeout maior para operações
+      - LAMBDA_RUNTIME_ENVIRONMENT_TIMEOUT=60
+
+      # Configurações de memória
+      - LAMBDA_LIMITS_TOTAL_CODE_SIZE=80530636800
+
+    # Ajuste de recursos (descomentar se necessário)
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '2'
+    #       memory: 4G
+
+  postgres:
+    # Expor banco para outras ferramentas (ex: DBeaver, pgAdmin)
+    # ports:
+    #   - "5433:5432"  # Usar porta diferente se 5432 já estiver em uso
+
+    # Configurações adicionais do PostgreSQL
+    environment:
+      - POSTGRES_DB=webapp
+      - PGDATA=/var/lib/postgresql/data/pgdata
+
+    # Comando customizado (descomentar se necessário)
+    # command: postgres -c log_statement=all
