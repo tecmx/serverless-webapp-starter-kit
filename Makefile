@@ -62,8 +62,12 @@ destroy: ## Destroi recursos no LocalStack
 clean: stop ## Para serviços e remove volumes
 	@echo "$(YELLOW)🧹 Limpando ambiente...$(NC)"
 	@$(DOCKER_COMPOSE) down -v
-	@rm -rf volume/
+	@rm -rf volume/ 2>/dev/null || true
 	@echo "$(GREEN)✅ Ambiente limpo!$(NC)"
+
+cleanup: ## Limpeza completa (containers, volumes, node_modules, etc)
+	@echo "$(YELLOW)🧹 Executando limpeza completa...$(NC)"
+	@./cleanup.sh
 
 shell-localstack: ## Abre shell no container do LocalStack
 	@$(DOCKER_COMPOSE) exec localstack bash

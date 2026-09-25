@@ -71,13 +71,13 @@ You can further improve this sample or remove all the specific code and write yo
 >
 > Want to develop locally without using a real AWS account? We now support LocalStack!
 >
-> 📚 **Documentation Index:** [LOCALSTACK-INDEX.md](LOCALSTACK-INDEX.md) - Complete documentation guide
+> 📚 **[Complete Documentation →](docs/localstack/)**
 >
 > **Quick Links:**
-> - 🚀 [Quick Start (5 minutes)](QUICK-START-LOCALSTACK.md) - Get started immediately
-> - 📖 [Complete Guide](README-LOCALSTACK.md) - Detailed documentation
-> - 💡 [Examples & Workflows](LOCALSTACK-EXAMPLES.md) - Practical examples
-> - ✅ [Verification Checklist](LOCALSTACK-VERIFICATION.md) - Verify your setup
+> - 🚀 [Quick Start (5 minutes)](docs/localstack/QUICK-START-LOCALSTACK.md) - Get started immediately
+> - 📖 [Complete Guide](docs/localstack/README-LOCALSTACK.md) - Detailed documentation
+> - 💡 [Examples & Workflows](docs/localstack/LOCALSTACK-EXAMPLES.md) - Practical examples
+> - ✅ [Test Results](docs/localstack/TESTE-RESULTADO.md) - Verify it works
 
 You need the following tools to deploy this sample:
 
